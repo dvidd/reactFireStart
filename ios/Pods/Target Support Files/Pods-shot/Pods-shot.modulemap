@@ -1,0 +1,6 @@
+module Pods_shot {
+  umbrella header "Pods-shot-umbrella.h"
+
+  export *
+  module * { export * }
+}
