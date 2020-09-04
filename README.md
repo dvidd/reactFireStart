@@ -32,6 +32,12 @@ $ npm start android
 
 ```
 
+## Todo : 
+
+- Add google login and others
+
+Feel free to make an pull request with changes :)
+
 
 
 Thanks to @amanmittal I use some of the code for the navigatioon workflow
