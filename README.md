@@ -21,7 +21,14 @@ Once that you have make that you can run using :
 
 $ yarn add
 
+$ cd /ios 
+$ cd ..
+$ pod install 
+
 $ yarn ios 
+
+<b>Android<b>
+
 $ yarn android
 
 === With npm ===
@@ -30,6 +37,9 @@ $ npm i
 
 $ npm start ios
 $ npm start android
+
+
+
 
 ```
 
