@@ -43,12 +43,16 @@ $ npm start android
 
 ```
 
-## Todo : 
+## To create this project :
 
-- Add google login and others
-
-Feel free to make an pull request with changes :)
-
+- expo init Name
+- yarn install navigator and their things
+- pod install
+- yarn install firebase and the File and Delegate file
+- pod install
+- yarn install auth with firebase && pod install that
+- Install the keyboard scroll component
+- Todo google sign in, first install dependency for google-sign, and set the reverse id in the url scheme in the project in Xcode
 
 
 Thanks to @amanmittal I use some of the code for the navigatioon workflow
