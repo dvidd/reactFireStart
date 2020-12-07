@@ -45,14 +45,44 @@ $ npm start android
 
 ## To create this project :
 
-- expo init Name
-- yarn install navigator and their things
-- pod install
-- yarn install firebase and the File and Delegate file
-- pod install
-- yarn install auth with firebase && pod install that
-- Install the keyboard scroll component
-- Todo google sign in, first install dependency for google-sign, and set the reverse id in the url scheme in the project in Xcode
+- Expo init 
+- Install navigator and their things :
+````shell
+yarn add @react-navigation/native
 
+yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+yarn add @react-navigation/stack
+
+cd ios/ && pod install
+````
+- Install firebase 
+````shell
+yarn add @react-native-firebase/app
+cd ios/ && pod install
+````
+- Add the delegate file and config in  AppDelegate.h
+````swift
+#import <Firebase.h>
+
+if ([FIRApp defaultApp] == nil) {
+    [FIRApp configure];
+  }
+````
+- Install auth with firebase && pod install that
+````shell 
+yarn add @react-native-firebase/auth
+cd ios/ && pod install
+````
+- Install the keyboard scroll component
+````shell 
+yarn add react-native-keyboard-aware-scroll-view
+cd ios/ && pod install
+`````
+- Todo google sign in, first install dependency for google-sign, and set the reverse id in the url scheme in the project in Xcode
+````shell 
+yarn add @react-native-community/google-signin
+cd ios / && pod install
+````
 
 Thanks to @amanmittal I use some of the code for the navigatioon workflow
