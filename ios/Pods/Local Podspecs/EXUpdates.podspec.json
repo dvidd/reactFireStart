@@ -1,6 +1,6 @@
 {
   "name": "EXUpdates",
-  "version": "0.2.14",
+  "version": "0.4.1",
   "summary": "Fetches and manages remotely-hosted assets and updates to your app's JS bundle.",
   "description": "Fetches and manages remotely-hosted assets and updates to your app's JS bundle.",
   "license": "MIT",
@@ -19,8 +19,15 @@
     "UMCore": [
 
     ],
-    "React": [
+    "React-Core": [
 
     ]
-  }
+  },
+  "testspecs": [
+    {
+      "name": "Tests",
+      "test_type": "unit",
+      "source_files": "Tests/*.{h,m}"
+    }
+  ]
 }

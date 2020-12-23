@@ -1,10 +1,12 @@
 {
-  "name": "reactfirestart",
-  "displayName": "reactfirestart",
+  "name": "reactFireStart",
+  "displayName": "reactFireStart",
   "expo": {
-    "name": "reactfirestart",
-    "slug": "reactfirestart",
+    "name": "reactFireStart",
+    "slug": "reactFireStart",
     "version": "1.0.0",
-    "assetBundlePatterns": ["**/*"]
+    "assetBundlePatterns": [
+      "**/*"
+    ]
   }
 }

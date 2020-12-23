@@ -1,4 +1,4 @@
-rootProject.name = 'reactfirestart'
+rootProject.name = 'reactFireStart'
 
 apply from: '../node_modules/react-native-unimodules/gradle.groovy'
 includeUnimodulesProjects()

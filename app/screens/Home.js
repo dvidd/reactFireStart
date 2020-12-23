@@ -1,37 +1,64 @@
 import React, { useContext } from "react";
-import { Text, View, TouchableOpacity, StyleSheet, Image } from "react-native";
+import {
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  SafeAreaView,
+  View
+} from "react-native";
 
 import { AuthContext } from "../navigation/AuthProvider";
 
+import variables from "../config/Variables";
+
 function Home() {
   const { user, logout } = useContext(AuthContext);
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Home Page</Text>
+  // Get user document with an ID of ABC
 
+  return (
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.title}>{variables.name}</Text>
+      </View>
       <TouchableOpacity onPress={() => logout()}>
         <Text style={styles.logout}>Logout</Text>
+        <Text style={styles.small}>{user.uid}</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  title: {
+    fontSize: 26,
+    color: variables.primary,
+    fontFamily: variables.font,
+    top: 10,
+    textAlign: "center",
+    fontWeight: "bold"
+  },
+  small: {
+    textAlign: "center",
+    fontSize: 15
+  },
   container: {
+    backgroundColor: "#fff",
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    textAlign: "center",
+    justifyContent: "space-between"
   },
   text: {
     fontSize: 26
   },
   logout: {
-    top: 50,
+    flexDirection: "column",
     fontWeight: "bold",
     fontSize: 24,
     textDecorationLine: "underline",
     textDecorationStyle: "solid",
-    textDecorationColor: "#000"
+    textDecorationColor: "#000",
+    textAlign: "center",
+    bottom: 0
   }
 });
 

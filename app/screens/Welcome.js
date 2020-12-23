@@ -3,21 +3,22 @@ import {
   StyleSheet,
   Text,
   View,
-  ImageBackground,
   Image,
+  ImageBackground,
   TouchableOpacity
 } from "react-native";
 
-import colors from "../config/Colors";
+import variables from "../config/Variables";
+import LoginSocial from "../components/LoginSocial/LoginSocial";
 
 function Welcome({ navigation }) {
   return (
     <ImageBackground
-      style={styles.background}
       source={{
         uri:
-          "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80"
+          "https://images.unsplash.com/photo-1545733099-152483684cb5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
       }}
+      style={styles.background}
     >
       <View style={styles.logoContainer}>
         <Image
@@ -28,17 +29,12 @@ function Welcome({ navigation }) {
       </View>
 
       <View style={styles.container}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Login")}
-          style={[styles.button]}
-        >
-          <Text style={[styles.text]}>Login</Text>
-        </TouchableOpacity>
+        <LoginSocial />
         <TouchableOpacity
           onPress={() => navigation.navigate("Register")}
           style={[styles.buttonRegister]}
         >
-          <Text style={[styles.textRegister]}>Register</Text>
+          <Text style={[styles.textRegister]}>Login with email</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>
@@ -48,7 +44,7 @@ function Welcome({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    height: 250,
+    height: 230,
     borderRadius: 50,
     width: "100%",
     flexDirection: "column"
@@ -68,37 +64,19 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   title: {
-    fontSize: 35,
+    fontSize: 40,
     textAlign: "center",
     fontWeight: "bold",
-    color: colors.white,
+    color: variables.white,
     marginTop: 10,
-    fontFamily: "Futura"
+    fontFamily: variables.font
   },
   titleText: {
     top: 30,
     fontSize: 25,
 
     fontWeight: "bold",
-    color: colors.primary
-  },
-  button: {
-    display: "flex",
-    borderRadius: 5,
-    justifyContent: "center",
-    alignItems: "center",
-    elevation: 8,
-    width: 350,
-    height: 50,
-    top: 70,
-    borderRadius: 14,
-    paddingVertical: 10,
-    paddingHorizontal: 12,
-    backgroundColor: "#fff",
-    shadowColor: "#fff",
-    shadowOpacity: 0.4,
-    shadowOffset: { height: 10, width: 0 },
-    shadowRadius: 20
+    color: variables.dark
   },
 
   buttonRegister: {
@@ -109,28 +87,23 @@ const styles = StyleSheet.create({
     elevation: 8,
     width: 350,
     height: 50,
-    top: 80,
+    top: 60,
     borderRadius: 14,
     paddingVertical: 10,
     paddingHorizontal: 12,
-    borderColor: "#fff",
+    borderColor: variables.white,
     borderWidth: 2,
-    shadowColor: "#fff",
-    color: "#fff",
+    shadowColor: variables.white,
+    color: variables.white,
     shadowOpacity: 0.4,
     shadowOffset: { height: 10, width: 0 },
     shadowRadius: 20
   },
 
-  text: {
-    fontSize: 16,
-    textTransform: "uppercase",
-    color: "#000"
-  },
   textRegister: {
     fontSize: 16,
     textTransform: "uppercase",
-    color: "#fff"
+    color: variables.white
   }
 });
 
