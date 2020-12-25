@@ -53,7 +53,7 @@ export default StyleSheet.create({
   title: {
     fontSize: 25,
     fontWeight: "bold",
-    color: variables.dark,
+    color: variables.secondary,
     marginTop: 100,
     fontFamily: variables.font
   },
@@ -135,9 +135,5 @@ export default StyleSheet.create({
     top: -40,
     fontSize: 15,
     fontWeight: "bold"
-  },
-  minpadding: {
-    top: 20,
-    paddingTop: 30
   }
 });

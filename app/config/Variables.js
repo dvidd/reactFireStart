@@ -1,8 +1,9 @@
 export default {
-  subtitle: "ReactFireStart",
-  dark: "#3F3E3F",
-  primary: "#4285F4",
+  dark: "#19192C",
+  primary: "#19192C",
+  secondary: "#8884FF",
   white: "#fff",
   font: "Futura",
-  name: "ReactFireStart"
+  name: "Cashfy",
+  subtitle: "Send & recive cash instanly without fees and borders"
 };

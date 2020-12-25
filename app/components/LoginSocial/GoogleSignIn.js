@@ -20,7 +20,7 @@ async function onButtonPress() {
   return auth().signInWithCredential(googleCredential);
 }
 
-function Welcome() {
+function GoogleButton() {
   return (
     <TouchableOpacity onPress={() => onButtonPress()} style={[styles.button]}>
       <Image
@@ -34,7 +34,7 @@ function Welcome() {
 
 const styles = StyleSheet.create({
   button: {
-    top: 0,
+    bottom: 20,
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Welcome;
+export default GoogleButton;

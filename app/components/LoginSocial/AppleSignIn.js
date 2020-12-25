@@ -1,13 +1,37 @@
 import React from "react";
 import { StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import auth from "@react-native-firebase/auth";
+import { appleAuth } from "@invertase/react-native-apple-authentication";
 
-async function onButtonPress() {
-  alert("No disponible al momento");
+async function onAppleButtonPress() {
+  // Start the sign-in request
+  const appleAuthRequestResponse = await appleAuth.performRequest({
+    requestedOperation: appleAuth.Operation.LOGIN,
+    requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME]
+  });
+
+  // Ensure Apple returned a user identityToken
+  if (!appleAuthRequestResponse.identityToken) {
+    throw "Apple Sign-In failed - no identify token returned";
+  }
+
+  // Create a Firebase credential from the response
+  const { identityToken, nonce } = appleAuthRequestResponse;
+  const appleCredential = auth.AppleAuthProvider.credential(
+    identityToken,
+    nonce
+  );
+
+  // Sign the user in with the credential
+  return auth().signInWithCredential(appleCredential);
 }
 
-function Welcome() {
+function AppleButtonRender() {
   return (
-    <TouchableOpacity onPress={() => onButtonPress()} style={[styles.button]}>
+    <TouchableOpacity
+      onPress={() => onAppleButtonPress()}
+      style={[styles.button]}
+    >
       <Image
         style={styles.google}
         source={require("../../assets/apple.png")}
@@ -19,7 +43,7 @@ function Welcome() {
 
 const styles = StyleSheet.create({
   button: {
-    top: 20,
+    bottom: 5,
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
@@ -52,4 +76,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Welcome;
+export default AppleButtonRender;

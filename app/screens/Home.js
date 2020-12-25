@@ -4,7 +4,8 @@ import {
   TouchableOpacity,
   StyleSheet,
   SafeAreaView,
-  View
+  View,
+  Button
 } from "react-native";
 
 import { AuthContext } from "../navigation/AuthProvider";
@@ -19,6 +20,7 @@ function Home() {
     <SafeAreaView style={styles.container}>
       <View>
         <Text style={styles.title}>{variables.name}</Text>
+        <Text style={styles.money}>40.4€</Text>
       </View>
       <TouchableOpacity onPress={() => logout()}>
         <Text style={styles.logout}>Logout</Text>
@@ -36,6 +38,17 @@ const styles = StyleSheet.create({
     top: 10,
     textAlign: "center",
     fontWeight: "bold"
+  },
+  money: {
+    top: 70,
+    fontSize: 66,
+    color: variables.secondary,
+    fontFamily: variables.font,
+    textAlign: "center",
+    fontWeight: "bold"
+  },
+  button: {
+    top: 70
   },
   small: {
     textAlign: "center",
