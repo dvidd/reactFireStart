@@ -84,5 +84,9 @@ cd ios/ && pod install
 yarn add @react-native-community/google-signin
 cd ios / && pod install
 ````
-
+- Add cloud storage
+`````shell
+yarn add @react-native-firebase/firestore
+cd ios / && pod install
+`````
 Thanks to @amanmittal I use some of the code for the navigatioon workflow
