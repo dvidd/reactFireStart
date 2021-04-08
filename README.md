@@ -1,6 +1,6 @@
 # reactFireStart
 
-React firebase Auth Started Kit because it seems nobody have done this before, this uses the Expo bare manage for using the native firebase libary, it also have an nice UX for login and register 
+React firebase auth started kit, this uses the Expo bare manage for using the native firebase libary, it also have an nice UX for login and register 
 
 <img src="https://github.com/dvidd/reactFireStart/blob/master/reactstart.png?raw=true">
 
