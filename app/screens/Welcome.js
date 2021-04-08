@@ -5,18 +5,24 @@ import {
   View,
   Image,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView,
 } from "react-native";
 
-import variables from "../config/Variables";
-import LoginSocial from "../components/LoginSocial/LoginSocial";
+import variables from "../config/variables";
 
-function Welcome({ navigation }) {
+
+import style from "../config/styles"
+
+import Socials from "../components/AuthSocials/Socials";
+
+export default function Welcome({ navigation }) {
   return (
+    <ScrollView contentContainerStyle={{flexGrow: 1, backgroundColor: "#fff"}}>
     <ImageBackground
       source={{
         uri:
-          "https://images.unsplash.com/photo-1545733099-152483684cb5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+          "https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
       }}
       style={styles.background}
     >
@@ -28,23 +34,27 @@ function Welcome({ navigation }) {
         <Text style={styles.title}>React Fire Start</Text>
       </View>
 
-      <View style={styles.container}>
-        <LoginSocial />
+      <View style={[styles.container]}>
+        <Socials />
+
         <TouchableOpacity
           onPress={() => navigation.navigate("Register")}
-          style={[styles.buttonRegister]}
+          style={[style.SocialButton, {backgroundColor: "transparent", borderColor: "#fff", borderWidth: 2}]}
         >
-          <Text style={[styles.textRegister]}>Login with email</Text>
+          <Text style={[style.textRegister]}>Login with email</Text>
         </TouchableOpacity>
+
       </View>
     </ImageBackground>
+    </ScrollView>
+   
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    height: 230,
+    height: 290,
     borderRadius: 50,
     width: "100%",
     flexDirection: "column"
@@ -107,4 +117,3 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Welcome;

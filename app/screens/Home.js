@@ -9,7 +9,7 @@ import {
 
 import { AuthContext } from "../navigation/AuthProvider";
 
-import variables from "../config/Variables";
+import variables from "../config/variables";
 
 function Home() {
   const { user, logout } = useContext(AuthContext);

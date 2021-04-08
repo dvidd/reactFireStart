@@ -1,8 +1,8 @@
 export default {
-  subtitle: "ReactFireStart",
-  dark: "#3F3E3F",
-  primary: "#4285F4",
+  subtitle: "reactstart template for clean react code",
+  dark: "#000",
+  primary: "#000",
   white: "#fff",
   font: "Futura",
-  name: "ReactFireStart"
+  name: "reactstart"
 };

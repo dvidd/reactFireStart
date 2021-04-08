@@ -1,29 +1,32 @@
 import React, { useState, useContext } from "react";
-import { Text, TextInput, TouchableOpacity, View, Icon } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View , ScrollView} from "react-native";
 
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+
 import { AuthContext } from "../navigation/AuthProvider";
 
-import LoginSocial from "../components/LoginSocial/LoginSocial/";
-import styles from "../config/Styles";
 
-export default function LoginScreen({ navigation }) {
+import Socials from "../components/AuthSocials/Socials";
+
+
+import styles from "../config/styles"
+
+
+function Login({ navigation }) {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const { login } = useContext(AuthContext);
 
   return (
-    <KeyboardAwareScrollView
-      style={styles.login}
-      keyboardShouldPersistTaps="always"
-    >
-      <View style={styles.form}>
-        <View style={styles.textcontainer}>
-          <Text style={styles.title}>Login</Text>
-          <Text style={styles.subtitle}>Welcome back!</Text>
+    <ScrollView contentContainerStyle={{flexGrow: 1, backgroundColor: "#fff"}}>
+      <View style={style.main}>
+      <View style={style.logoContainer}>
+        <View style={style.textsLogo}>
+        <Text style={styles.title}>Login</Text>
+        <Text style={styles.subtitle}>Log in your account</Text>
         </View>
-
+        <View style={style.LogoBox}>
         <TextInput
           style={styles.input}
           placeholder="E-mail"
@@ -47,7 +50,7 @@ export default function LoginScreen({ navigation }) {
           style={styles.button}
           onPress={() => login(email, password)}
         >
-          <Text style={styles.buttonTitle}>Login</Text>
+          <Text style={styles.buttonTitle}> Log in </Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.navigate("Register")}
@@ -55,12 +58,60 @@ export default function LoginScreen({ navigation }) {
         >
           <Text style={styles.footerText}>
             ¿Don't have an account?
-            <Text style={styles.footerLink}> Sign In</Text>
+            <Text style={styles.footerLink}> Register </Text>
           </Text>
         </TouchableOpacity>
 
-        <LoginSocial style={styles.minpadding} />
+        </View>
       </View>
-    </KeyboardAwareScrollView>
+
+      <View style={style.buttonsContainer}>
+      <Text style={styles.subtitle}>Login with </Text>
+
+      <Socials/>
+     
+
+      <TouchableOpacity onPress={() => navigation.navigate("Register")} style={[styles.SocialButton, styles.SocialEmail]}>
+        <Text style={[styles.SocialText, styles.textBlack]}>Login with email</Text>
+      </TouchableOpacity>
+
+
+      </View>
+      </View>
+    </ScrollView>
   );
 }
+
+const style = StyleSheet.create({
+  main: {
+    flex:1,
+    backgroundColor: "#fff",
+  },
+  logoContainer: {
+    flex: 3,
+    alignItems: "center",
+
+  },
+  textsLogo: {
+    flex: 5,
+    justifyContent: "center",
+    marginTop: 60,
+    width: "85%"
+  },
+  LogoBox: {
+    flex: 2,
+    width: "85%"
+  },
+  logo: {
+    width: 250,
+    height: 250
+  },
+
+  buttonsContainer: {
+    flex: 2,
+    alignItems: "center",
+  },
+ 
+});
+
+export default Login;
